@@ -1,0 +1,152 @@
+/**
+ * Центральне джерело контенту лендингу INKWAY.
+ * Тут заглушки — замінюйте тексти, контакти та посилання на реальні.
+ */
+
+export const site = {
+  name: "INKWAY",
+  subtitle: "DELIVERY",
+  city: "Ужгород",
+  phone: "+38 (066) 123 45 67",
+  phoneHref: "tel:+380661234567",
+  email: "info@inkway.com.ua",
+  emailHref: "mailto:info@inkway.com.ua",
+  address: "м. Ужгород, Закарпатська обл.",
+  hours: "Працюємо 24/7",
+  socials: {
+    instagram: "https://instagram.com/",
+    telegram: "https://t.me/",
+    viber: "viber://chat",
+  },
+} as const;
+
+export type NavItem = { label: string; href: string };
+
+export const nav: NavItem[] = [
+  { label: "Головна", href: "#home" },
+  { label: "Послуги", href: "#services" },
+  { label: "Зона доставки", href: "#coverage" },
+  { label: "Як це працює", href: "#how" },
+  { label: "Контакти", href: "#contact" },
+];
+
+export type Service = {
+  id: string;
+  title: string;
+  description: string;
+  /** ключ іконки — див. components/Icon.tsx */
+  icon: "box" | "car" | "truck" | "trash";
+  cta: string;
+  highlight?: boolean;
+};
+
+export const services: Service[] = [
+  {
+    id: "delivery",
+    title: "Доставка посилок",
+    description:
+      "Швидка та надійна доставка посилок, документів і покупок по Ужгороду та околицях. Від дверей до дверей.",
+    icon: "box",
+    cta: "Замовити доставку",
+    highlight: true,
+  },
+  {
+    id: "taxi",
+    title: "Таксі",
+    description:
+      "Комфортні поїздки містом та за його межами. Подача авто за кілька хвилин, фіксована вартість.",
+    icon: "car",
+    cta: "Викликати таксі",
+  },
+  {
+    id: "cargo",
+    title: "Вантажні перевезення",
+    description:
+      "Перевезення меблів, техніки та будматеріалів. Допомога вантажників, акуратність, будь-який об'єм.",
+    icon: "truck",
+    cta: "Розрахувати вартість",
+  },
+  {
+    id: "waste",
+    title: "Вивіз сміття",
+    description:
+      "Професійний вивіз будівельного та побутового сміття для дому, бізнесу й будівництва.",
+    icon: "trash",
+    cta: "Замовити вивіз",
+  },
+];
+
+export type Feature = {
+  title: string;
+  description: string;
+  icon: "bolt" | "shield" | "star" | "headset";
+};
+
+export const features: Feature[] = [
+  {
+    title: "Швидкість",
+    description: "Виконуємо замовлення максимально швидко — від 15 хвилин на подачу.",
+    icon: "bolt",
+  },
+  {
+    title: "Надійність",
+    description: "Гарантія збереження та відповідальність за кожне відправлення.",
+    icon: "shield",
+  },
+  {
+    title: "Якість",
+    description: "Перевірені водії й кур'єри, акуратне поводження з вантажем.",
+    icon: "star",
+  },
+  {
+    title: "Підтримка",
+    description: "Завжди на зв'язку 24/7 та готові допомогти з будь-яким запитом.",
+    icon: "headset",
+  },
+];
+
+export type Step = { num: string; title: string; description: string };
+
+export const steps: Step[] = [
+  {
+    num: "01",
+    title: "Залишаєте заявку",
+    description: "Телефонуйте або пишіть у месенджер — приймаємо замовлення цілодобово.",
+  },
+  {
+    num: "02",
+    title: "Узгоджуємо деталі",
+    description: "Уточнюємо адресу, час і вартість. Жодних прихованих доплат.",
+  },
+  {
+    num: "03",
+    title: "Виїжджаємо до вас",
+    description: "Кур'єр або водій вирушає за вказаною адресою в узгоджений час.",
+  },
+  {
+    num: "04",
+    title: "Доставлено",
+    description: "Отримуєте вантаж вчасно й у цілості. Оплата зручним способом.",
+  },
+];
+
+/** Населені пункти зони обслуговування (околиці Ужгорода) */
+export const coverageAreas: string[] = [
+  "Ужгород",
+  "Минай",
+  "Барвінок",
+  "Сторожниця",
+  "Оноківці",
+  "Коритняни",
+  "Великі Лази",
+  "Баранинці",
+  "Концово",
+  "Часлівці",
+];
+
+export const stats = [
+  { value: "24/7", label: "Цілодобова робота" },
+  { value: "15 хв", label: "Середній час подачі" },
+  { value: "10+", label: "Населених пунктів" },
+  { value: "5★", label: "Оцінка клієнтів" },
+];

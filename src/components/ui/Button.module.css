@@ -1,0 +1,66 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  font-family: var(--font-display-stack);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Розміри */
+.md {
+  height: 2.75rem;
+  padding-inline: 1.5rem;
+  font-size: 0.875rem;
+}
+.lg {
+  height: 3.5rem;
+  padding-inline: 2rem;
+  font-size: 1rem;
+}
+
+/* Варіанти */
+.primary {
+  background-color: var(--amber-500);
+  color: var(--ink-950);
+}
+.primary:hover {
+  background-color: var(--amber-400);
+  box-shadow: var(--shadow-glow);
+}
+
+.outline {
+  border: 1px solid var(--ink-600);
+  color: var(--fg);
+  background-color: rgba(12, 12, 14, 0.4);
+  backdrop-filter: blur(8px);
+}
+.outline:hover {
+  border-color: var(--amber-500);
+  color: var(--amber-400);
+}
+
+.ghost {
+  color: var(--fg-muted);
+}
+.ghost:hover {
+  color: var(--amber-400);
+}
+
+.arrow {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+.btn:hover .arrow {
+  transform: translateX(4px);
+}

@@ -1,0 +1,134 @@
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+.scrolled {
+  border-bottom-color: var(--ink-700);
+  background-color: rgba(8, 8, 10, 0.85);
+  backdrop-filter: blur(14px);
+}
+
+.bar {
+  display: flex;
+  height: var(--header-h);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.link {
+  font-family: var(--font-display-stack);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  transition: color 0.2s ease;
+}
+.link:hover {
+  color: var(--amber-400);
+}
+
+.actions {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.phone {
+  font-family: var(--font-display-stack);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--fg);
+  transition: color 0.2s ease;
+}
+.phone:hover {
+  color: var(--amber-400);
+}
+
+.toggle {
+  display: grid;
+  height: 2.75rem;
+  width: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--ink-600);
+  border-radius: 0.5rem;
+  color: var(--fg);
+}
+.toggleIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* ---------- Мобільне меню ---------- */
+.mobile {
+  overflow: hidden;
+  background-color: rgba(8, 8, 10, 0.97);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid transparent;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.mobileOpen {
+  max-height: 85vh;
+  opacity: 1;
+  border-top-color: var(--ink-700);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-block: 1.25rem;
+}
+
+.mobileLink {
+  border-bottom: 1px solid var(--ink-800);
+  padding-block: 0.875rem;
+  font-family: var(--font-display-stack);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  transition: color 0.2s ease;
+}
+.mobileLink:hover {
+  color: var(--amber-400);
+}
+
+.mobileActions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.mobilePhone {
+  font-family: var(--font-display-stack);
+  font-size: 1.125rem;
+  letter-spacing: 0.03em;
+  color: var(--amber-400);
+}
+
+@media (min-width: 1024px) {
+  .nav,
+  .actions {
+    display: flex;
+  }
+  .toggle,
+  .mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,104 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 5rem;
+  background:
+    radial-gradient(70% 50% at 0% 50%, rgba(232, 130, 30, 0.08), transparent 60%),
+    var(--ink-900);
+  border-block: 1px solid var(--ink-800);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.areas {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid var(--ink-600);
+  background-color: var(--ink-850);
+  font-size: 0.875rem;
+  color: var(--fg);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.chip:hover {
+  border-color: var(--amber-500);
+  color: var(--amber-400);
+}
+.chipDot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background-color: var(--amber-500);
+}
+
+.note {
+  margin-top: 1.75rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+/* Стилізована «мапа» */
+.map {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 1.25rem;
+  border: 1px solid var(--ink-700);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(232, 130, 30, 0.12), transparent 60%),
+    linear-gradient(160deg, var(--ink-850), var(--ink-950));
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.mapSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.pulse {
+  transform-origin: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.25; r: 8; }
+  50% { opacity: 0.05; r: 60; }
+}
+.mapLabel {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  font-family: var(--font-display-stack);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.mapLabelCity {
+  font-size: 1.5rem;
+  color: var(--fg);
+}
+.mapLabelSub {
+  font-size: 0.8125rem;
+  color: var(--amber-500);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 7rem;
+  }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+  }
+}

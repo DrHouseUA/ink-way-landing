@@ -1,0 +1,113 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ink-950);
+  border-top: 1px solid var(--ink-800);
+  padding-top: 4rem;
+}
+.ghost {
+  position: absolute;
+  right: 4%;
+  bottom: -4rem;
+  font-family: var(--font-display-stack);
+  font-weight: 700;
+  font-size: clamp(8rem, 18vw, 16rem);
+  line-height: 1;
+  color: rgba(244, 243, 241, 0.025);
+  pointer-events: none;
+  user-select: none;
+}
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+.about {
+  max-width: 22rem;
+}
+.tagline {
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+.socials {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.social {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--ink-600);
+  color: var(--fg);
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.social:hover {
+  border-color: var(--amber-500);
+  color: var(--amber-400);
+  transform: translateY(-3px);
+}
+.social svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.colTitle {
+  font-family: var(--font-display-stack);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin-bottom: 1rem;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.list a,
+.list span {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  transition: color 0.2s ease;
+}
+.list a:hover {
+  color: var(--amber-400);
+}
+
+.bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--ink-800);
+  font-size: 0.8125rem;
+  color: var(--fg-faint);
+}
+.heart {
+  color: var(--amber-500);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
