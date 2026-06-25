@@ -2,7 +2,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/Icon";
 import { ButtonLink } from "@/components/ui/Button";
 import { cx } from "@/lib/cx";
-import { services } from "@/lib/content";
+import { services, site } from "@/lib/content";
 import styles from "./Services.module.css";
 
 export function Services() {
@@ -15,8 +15,13 @@ export function Services() {
             title="Усе, що потрібно — в одному місці"
             subtitle="Логістика для дому та бізнесу: від маленької посилки до повного переїзду. Беремо на себе все, що пов'язано з доставкою."
           />
-          <ButtonLink href="#contact" variant="outline">
-            Залишити заявку
+          <ButtonLink
+            href={site.telegramBot}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+          >
+            Замовити в Telegram
           </ButtonLink>
         </div>
 
@@ -32,7 +37,12 @@ export function Services() {
               </span>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardText}>{s.description}</p>
-              <a href="#contact" className={styles.cardCta}>
+              <a
+                href={site.telegramBot}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.cardCta}
+              >
                 {s.cta}
                 <Icon name="arrow" className={styles.ctaArrow} />
               </a>

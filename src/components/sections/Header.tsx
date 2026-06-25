@@ -44,7 +44,12 @@ export function Header() {
           <a href={site.phoneHref} className={styles.phone}>
             {site.phone}
           </a>
-          <ButtonLink href="#contact" withArrow>
+          <ButtonLink
+            href={site.telegramBot}
+            target="_blank"
+            rel="noopener noreferrer"
+            withArrow
+          >
             Замовити
           </ButtonLink>
         </div>
@@ -79,7 +84,9 @@ export function Header() {
               {site.phone}
             </a>
             <ButtonLink
-              href="#contact"
+              href={site.telegramBot}
+              target="_blank"
+              rel="noopener noreferrer"
               size="lg"
               withArrow
               onClick={() => setOpen(false)}

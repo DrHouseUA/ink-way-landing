@@ -13,9 +13,12 @@ export const site = {
   emailHref: "mailto:info@inkway.com.ua",
   address: "м. Ужгород, Закарпатська обл.",
   hours: "Працюємо 24/7",
+  /** Telegram-бот для замовлення послуг */
+  telegramBot: "https://t.me/UzhDeliveryBot",
+  telegramBotHandle: "@UzhDeliveryBot",
   socials: {
     instagram: "https://instagram.com/",
-    telegram: "https://t.me/",
+    telegram: "https://t.me/UzhDeliveryBot",
     viber: "viber://chat",
   },
 } as const;
@@ -59,18 +62,10 @@ export const services: Service[] = [
     cta: "Викликати таксі",
   },
   {
-    id: "cargo",
-    title: "Вантажні перевезення",
-    description:
-      "Перевезення меблів, техніки та будматеріалів. Допомога вантажників, акуратність, будь-який об'єм.",
-    icon: "truck",
-    cta: "Розрахувати вартість",
-  },
-  {
     id: "waste",
     title: "Вивіз сміття",
     description:
-      "Професійний вивіз будівельного та побутового сміття для дому, бізнесу й будівництва.",
+      "Винесемо та вивеземо ваше побутове сміття з дому чи квартири. Швидко, акуратно й без зайвих клопотів.",
     icon: "trash",
     cta: "Замовити вивіз",
   },
@@ -95,7 +90,7 @@ export const features: Feature[] = [
   },
   {
     title: "Якість",
-    description: "Перевірені водії й кур'єри, акуратне поводження з вантажем.",
+    description: "Перевірені водії й кур'єри, акуратне поводження з кожним відправленням.",
     icon: "star",
   },
   {
@@ -126,7 +121,7 @@ export const steps: Step[] = [
   {
     num: "04",
     title: "Доставлено",
-    description: "Отримуєте вантаж вчасно й у цілості. Оплата зручним способом.",
+    description: "Отримуєте відправлення вчасно й у цілості. Оплата зручним способом.",
   },
 ];
 

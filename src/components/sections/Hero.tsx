@@ -24,11 +24,17 @@ export function Hero() {
             </h1>
             <p className={styles.subtitle}>
               Швидка та надійна доставка по {site.city}у й околицях. Посилки,
-              таксі, вантажі та вивіз сміття — усе в одному місці. {site.hours}.
+              таксі та вивіз сміття — усе в одному місці. {site.hours}.
             </p>
             <div className={styles.actions}>
-              <ButtonLink href="#contact" size="lg" withArrow>
-                Замовити доставку
+              <ButtonLink
+                href={site.telegramBot}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+                withArrow
+              >
+                Замовити в Telegram
               </ButtonLink>
               <ButtonLink href="#services" size="lg" variant="outline">
                 Наші послуги
