@@ -63,7 +63,7 @@ export function Contact() {
             <h3 className={styles.ctaTitle}>Замовлення в Telegram</h3>
             <p className={styles.ctaText}>
               Натисніть кнопку — і оформіть замовлення прямо в чаті з нашим
-              ботом. Швидко, зручно та цілодобово.
+              ботом. Швидко та зручно, щодня з 9:00 до 22:00.
             </p>
             <ButtonLink
               href={site.telegramBot}

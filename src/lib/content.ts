@@ -12,7 +12,7 @@ export const site = {
   email: "info@inkway.com.ua",
   emailHref: "mailto:info@inkway.com.ua",
   address: "м. Ужгород, Закарпатська обл.",
-  hours: "Працюємо 24/7",
+  hours: "Щодня з 9:00 до 22:00",
   /** Telegram-бот для замовлення послуг */
   telegramBot: "https://t.me/UzhDeliveryBot",
   telegramBotHandle: "@UzhDeliveryBot",
@@ -95,7 +95,7 @@ export const features: Feature[] = [
   },
   {
     title: "Підтримка",
-    description: "Завжди на зв'язку 24/7 та готові допомогти з будь-яким запитом.",
+    description: "На зв'язку щодня з 9:00 до 22:00 та готові допомогти з будь-яким запитом.",
     icon: "headset",
   },
 ];
@@ -106,7 +106,7 @@ export const steps: Step[] = [
   {
     num: "01",
     title: "Залишаєте заявку",
-    description: "Телефонуйте або пишіть у месенджер — приймаємо замовлення цілодобово.",
+    description: "Телефонуйте або пишіть у месенджер — приймаємо замовлення щодня з 9:00 до 22:00.",
   },
   {
     num: "02",
@@ -140,7 +140,7 @@ export const coverageAreas: string[] = [
 ];
 
 export const stats = [
-  { value: "24/7", label: "Цілодобова робота" },
+  { value: "9–22", label: "Щодня без вихідних" },
   { value: "15 хв", label: "Середній час подачі" },
   { value: "10+", label: "Населених пунктів" },
   { value: "5★", label: "Оцінка клієнтів" },
