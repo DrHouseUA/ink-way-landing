@@ -19,7 +19,6 @@ export const site = {
   socials: {
     instagram: "https://instagram.com/",
     telegram: "https://t.me/UzhDeliveryBot",
-    viber: "viber://chat",
   },
 } as const;
 

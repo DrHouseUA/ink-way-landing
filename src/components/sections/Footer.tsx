@@ -26,9 +26,6 @@ export function Footer() {
               <a className={styles.social} href={site.socials.telegram} aria-label="Telegram" target="_blank" rel="noopener noreferrer">
                 <Icon name="telegram" />
               </a>
-              <a className={styles.social} href={site.socials.viber} aria-label="Viber">
-                <Icon name="viber" />
-              </a>
             </div>
           </div>
 
