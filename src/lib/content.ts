@@ -5,7 +5,7 @@
 
 export const site = {
   name: "INKWAY",
-  subtitle: "DELIVERY",
+  subtitle: "SERVICE",
   city: "Ужгород",
   phone: "+38 (063) 220 27 32",
   phoneHref: "tel:+380632202732",
