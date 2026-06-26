@@ -7,15 +7,15 @@ export const site = {
   name: "INKWAY",
   subtitle: "DELIVERY",
   city: "Ужгород",
-  phone: "+38 (066) 123 45 67",
-  phoneHref: "tel:+380661234567",
+  phone: "+38 (063) 220 27 32",
+  phoneHref: "tel:+380632202732",
   address: "м. Ужгород, Закарпатська обл.",
   hours: "Щодня з 9:00 до 22:00",
   /** Telegram-бот для замовлення послуг */
   telegramBot: "https://t.me/UzhDeliveryBot",
   telegramBotHandle: "@UzhDeliveryBot",
   socials: {
-    instagram: "https://instagram.com/",
+    instagram: "https://www.instagram.com/inkway_service",
     telegram: "https://t.me/UzhDeliveryBot",
   },
 } as const;
