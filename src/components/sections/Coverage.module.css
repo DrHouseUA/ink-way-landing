@@ -24,22 +24,50 @@
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   padding: 0.5rem 0.9rem;
   border-radius: 9999px;
   border: 1px solid var(--ink-600);
   background-color: var(--ink-850);
   font-size: 0.875rem;
   color: var(--fg);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease,
+    background-color 0.25s ease, box-shadow 0.25s ease;
 }
 .chip:hover {
   border-color: var(--amber-500);
   color: var(--amber-400);
 }
+.chipActive {
+  border-color: var(--amber-500);
+  background-color: rgba(232, 130, 30, 0.12);
+  color: var(--amber-400);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Ціна — плавно "виїжджає" при кліку */
+.chipPrice {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--amber-400);
+  transition: max-width 0.4s ease, opacity 0.3s ease, margin-left 0.4s ease;
+}
+.chipActive .chipPrice {
+  max-width: 10rem;
+  opacity: 1;
+  margin-left: 0.4rem;
+}
 .chipDot {
   width: 0.4rem;
   height: 0.4rem;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
   border-radius: 9999px;
   background-color: var(--amber-500);
 }

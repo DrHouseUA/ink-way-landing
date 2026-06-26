@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { cx } from "@/lib/cx";
 import { coverageAreas, site } from "@/lib/content";
 import styles from "./Coverage.module.css";
 
 export function Coverage() {
+  const [active, setActive] = useState<string | null>(null);
+
   return (
     <section id="coverage" className={styles.section}>
       <div className="container">
@@ -15,15 +21,31 @@ export function Coverage() {
               subtitle="Доставляємо в межах міста і до сусідніх населених пунктів. Не знайшли свій населений пункт — напишіть нам, домовимось."
             />
             <ul className={styles.areas}>
-              {coverageAreas.map((area) => (
-                <li key={area} className={styles.chip}>
-                  <span className={styles.chipDot} />
-                  {area}
-                </li>
-              ))}
+              {coverageAreas.map((area) => {
+                const isActive = active === area.name;
+                return (
+                  <li key={area.name}>
+                    <button
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() =>
+                        setActive(isActive ? null : area.name)
+                      }
+                      className={cx(styles.chip, isActive && styles.chipActive)}
+                    >
+                      <span className={styles.chipDot} />
+                      {area.name}
+                      <span className={styles.chipPrice}>
+                        від {area.price} грн
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
             <p className={styles.note}>
-              Виїзд за межі зони — за домовленістю. {site.hours}.
+              Натисніть район, щоб побачити базову вартість доставки. Виїзд за
+              межі зони — за домовленістю. {site.hours}.
             </p>
           </div>
 

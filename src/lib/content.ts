@@ -122,18 +122,23 @@ export const steps: Step[] = [
   },
 ];
 
-/** Населені пункти зони обслуговування (околиці Ужгорода) */
-export const coverageAreas: string[] = [
-  "Ужгород",
-  "Минай",
-  "Барвінок",
-  "Сторожниця",
-  "Оноківці",
-  "Коритняни",
-  "Великі Лази",
-  "Баранинці",
-  "Концово",
-  "Часлівці",
+/**
+ * Населені пункти зони обслуговування (околиці Ужгорода).
+ * price — базова (стартова) вартість доставки в грн. Заглушки — уточніть.
+ */
+export type CoverageArea = { name: string; price: number };
+
+export const coverageAreas: CoverageArea[] = [
+  { name: "Ужгород", price: 50 },
+  { name: "Минай", price: 70 },
+  { name: "Барвінок", price: 80 },
+  { name: "Сторожниця", price: 90 },
+  { name: "Оноківці", price: 90 },
+  { name: "Коритняни", price: 100 },
+  { name: "Великі Лази", price: 110 },
+  { name: "Баранинці", price: 110 },
+  { name: "Концово", price: 120 },
+  { name: "Часлівці", price: 130 },
 ];
 
 export const stats = [
