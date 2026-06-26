@@ -1,6 +1,4 @@
 import { ButtonLink } from "@/components/ui/Button";
-import { LogoMark } from "@/components/Logo";
-import { InkSplatter } from "@/components/decor/InkSplatter";
 import { site, stats } from "@/lib/content";
 import styles from "./Hero.module.css";
 
@@ -12,43 +10,36 @@ export function Hero() {
         IW
       </span>
 
-      <div className="container">
-        <div className={styles.grid}>
-          <div>
-            <span className={`eyebrow ${styles.eyebrow}`}>
-              {site.name} · {site.city}
-            </span>
-            <h1 className={styles.title}>
-              Доставка, що<br />
-              <em className="textGradientAmber">говорить за тебе.</em>
-            </h1>
-            <p className={styles.subtitle}>
-              Швидка та надійна доставка по {site.city}у й околицях. Посилки,
-              таксі та вивіз сміття — усе в одному місці. {site.hours}.
-            </p>
-            <div className={styles.actions}>
-              <ButtonLink
-                href={site.telegramBot}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="lg"
-                withArrow
-              >
-                Замовити в Telegram
-              </ButtonLink>
-              <ButtonLink href="#services" size="lg" variant="outline">
-                Наші послуги
-              </ButtonLink>
-            </div>
-          </div>
-
-          <div className={styles.visual}>
-            <InkSplatter className={styles.splatter} />
-            <LogoMark className={styles.visualRing} />
-            <span className={styles.visualBadge}>
-              <span className={styles.dot} />
-              Онлайн — приймаємо замовлення
-            </span>
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.content}>
+          <span className={styles.status}>
+            <span className={styles.dot} />
+            Онлайн — приймаємо замовлення
+          </span>
+          <span className={`eyebrow ${styles.eyebrow}`}>
+            {site.name} · {site.city}
+          </span>
+          <h1 className={styles.title}>
+            Доставка, що<br />
+            <em className="textGradientAmber">говорить за тебе.</em>
+          </h1>
+          <p className={styles.subtitle}>
+            Швидка та надійна доставка по {site.city}у й околицях. Посилки,
+            таксі та вивіз сміття — усе в одному місці. {site.hours}.
+          </p>
+          <div className={styles.actions}>
+            <ButtonLink
+              href={site.telegramBot}
+              target="_blank"
+              rel="noopener noreferrer"
+              size="lg"
+              withArrow
+            >
+              Замовити в Telegram
+            </ButtonLink>
+            <ButtonLink href="#services" size="lg" variant="outline">
+              Наші послуги
+            </ButtonLink>
           </div>
         </div>
 

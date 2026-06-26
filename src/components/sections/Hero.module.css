@@ -1,49 +1,89 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: calc(var(--header-h) + 3rem);
-  padding-bottom: 4rem;
-  background:
-    radial-gradient(120% 80% at 80% 0%, rgba(232, 130, 30, 0.14), transparent 55%),
-    radial-gradient(90% 60% at 10% 100%, rgba(232, 130, 30, 0.08), transparent 60%),
-    var(--ink-950);
+  display: flex;
+  align-items: center;
+  min-height: clamp(560px, 90vh, 920px);
+  padding-top: calc(var(--header-h) + 2.5rem);
+  padding-bottom: 3rem;
+  /* Мобільний (за замовч.) — вертикальне фото дороги */
+  background-image:
+    linear-gradient(to bottom, transparent 60%, var(--ink-950) 100%),
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 10, 0.62) 0%,
+      rgba(8, 8, 10, 0.55) 45%,
+      rgba(8, 8, 10, 0.9) 100%
+    ),
+    url("/assets/hero-road.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .glow {
   position: absolute;
   top: -10%;
-  right: -5%;
-  width: 50rem;
-  height: 50rem;
+  right: -10%;
+  width: 42rem;
+  height: 42rem;
   pointer-events: none;
   filter: blur(10px);
+  z-index: 1;
 }
 
 .ghost {
   position: absolute;
-  inset-inline-end: 8%;
-  top: 18%;
+  inset-inline-end: 6%;
+  top: 16%;
   font-family: var(--font-display-stack);
   font-weight: 700;
-  font-size: clamp(12rem, 30vw, 28rem);
+  font-size: clamp(10rem, 26vw, 24rem);
   line-height: 1;
-  color: rgba(244, 243, 241, 0.03);
+  color: rgba(244, 243, 241, 0.04);
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: 1;
 }
 
-.grid {
+.inner {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  max-width: 40rem;
+}
+
+.status {
+  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  background-color: rgba(8, 8, 10, 0.55);
+  border: 1px solid var(--ink-600);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-display-stack);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #4ade80;
+  box-shadow: 0 0 10px #4ade80;
 }
 
 .eyebrow {
-  margin-bottom: 1.25rem;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -51,6 +91,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
   animation: fadeUp 0.7s ease-out both;
 }
 .title em {
@@ -73,59 +114,8 @@
   animation: fadeUp 0.7s ease-out 0.2s both;
 }
 
-/* Картка-візуал праворуч */
-.visual {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 1.25rem;
-  border: 1px solid var(--ink-700);
-  background:
-    radial-gradient(circle at 65% 35%, rgba(232, 130, 30, 0.35), transparent 45%),
-    linear-gradient(160deg, var(--ink-800), var(--ink-950));
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-  animation: fadeUp 0.7s ease-out 0.25s both;
-}
-.visualRing {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 70%;
-  opacity: 0.9;
-}
-.splatter {
-  position: absolute;
-  inset: 0;
-  color: rgba(232, 130, 30, 0.35);
-}
-.visualBadge {
-  position: absolute;
-  left: 1.25rem;
-  bottom: 1.25rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.875rem;
-  border-radius: 9999px;
-  background-color: rgba(8, 8, 10, 0.7);
-  border: 1px solid var(--ink-600);
-  backdrop-filter: blur(8px);
-  font-family: var(--font-display-stack);
-  font-size: 0.8125rem;
-  letter-spacing: 0.05em;
-}
-.dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background-color: #4ade80;
-  box-shadow: 0 0 10px #4ade80;
-}
-
 /* Смуга статистики */
 .stats {
-  position: relative;
-  z-index: 1;
   margin-top: 3.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -134,9 +124,10 @@
   border: 1px solid var(--ink-700);
   border-radius: 1rem;
   overflow: hidden;
+  backdrop-filter: blur(4px);
 }
 .stat {
-  background-color: var(--ink-900);
+  background-color: rgba(12, 12, 14, 0.82);
   padding: 1.5rem 1.25rem;
   text-align: center;
 }
@@ -152,19 +143,29 @@
   color: var(--fg-muted);
 }
 
+/* Планшет / десктоп — горизонтальне брендоване фото міста */
 @media (min-width: 768px) {
+  .hero {
+    background-image:
+      linear-gradient(to bottom, transparent 72%, var(--ink-950) 100%),
+      linear-gradient(
+        100deg,
+        rgba(8, 8, 10, 0.94) 0%,
+        rgba(8, 8, 10, 0.8) 38%,
+        rgba(8, 8, 10, 0.5) 68%,
+        rgba(8, 8, 10, 0.65) 100%
+      ),
+      url("/assets/hero-city.jpg");
+  }
   .stats {
     grid-template-columns: repeat(4, 1fr);
+    max-width: 44rem;
   }
 }
 
 @media (min-width: 1024px) {
   .hero {
-    padding-top: calc(var(--header-h) + 5rem);
-    padding-bottom: 6rem;
-  }
-  .grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 4rem;
+    padding-top: calc(var(--header-h) + 4rem);
+    padding-bottom: 4rem;
   }
 }
