@@ -55,7 +55,6 @@ export function Footer() {
             <h3 className={styles.colTitle}>Контакти</h3>
             <div className={styles.list}>
               <a href={site.phoneHref}>{site.phone}</a>
-              <a href={site.emailHref}>{site.email}</a>
               <span>{site.address}</span>
               <span>{site.hours}</span>
             </div>

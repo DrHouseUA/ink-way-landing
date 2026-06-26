@@ -9,8 +9,6 @@ export const site = {
   city: "Ужгород",
   phone: "+38 (066) 123 45 67",
   phoneHref: "tel:+380661234567",
-  email: "info@inkway.com.ua",
-  emailHref: "mailto:info@inkway.com.ua",
   address: "м. Ужгород, Закарпатська обл.",
   hours: "Щодня з 9:00 до 22:00",
   /** Telegram-бот для замовлення послуг */

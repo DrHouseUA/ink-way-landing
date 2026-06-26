@@ -26,15 +26,6 @@ export function Contact() {
                   <span className={styles.contactValue}>{site.phone}</span>
                 </span>
               </a>
-              <a href={site.emailHref} className={styles.contactRow}>
-                <span className={styles.contactIcon}>
-                  <Icon name="mail" />
-                </span>
-                <span>
-                  <span className={styles.contactLabel}>Пошта</span>
-                  <span className={styles.contactValue}>{site.email}</span>
-                </span>
-              </a>
               <div className={styles.contactRow}>
                 <span className={styles.contactIcon}>
                   <Icon name="pin" />
